@@ -202,7 +202,6 @@ h3 {
     
 }
 #search-bar {
-    height: 180%;
     width: 600px;
     position: relative;
     left:-5px;
@@ -219,7 +218,6 @@ h3 {
     background-color: #33CC66;
     border-width: 0px;
     position: relative;
-    top: -1px;
 }
 
 .category-image {
