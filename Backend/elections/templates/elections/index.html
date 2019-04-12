@@ -1,0 +1,32 @@
+{% extends "elections/layout.html" %}
+
+{% block title %}
+Candidates
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>Name</B></td>
+            <td><B>Introduction</B></td>
+            <td><B>Area</B></td>
+            <td><B>Number</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for candidate in candidates_list %}
+        <tr>
+            <td>{{candidate.name}}</td>
+            <td>{{candidate.introduction}}</td>
+            <td>
+                <a href = "areas/{{candidate.area}}/">
+                    {{candidate.area}}
+                </a>
+            </td>
+            <td>No. {{candidate.party_number}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
