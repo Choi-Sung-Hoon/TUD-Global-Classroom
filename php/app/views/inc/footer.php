@@ -5,6 +5,7 @@
   src="https://code.jquery.com/jquery-3.4.0.js"
   integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
   crossorigin="anonymous"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'>
 
 <!-- Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -20,6 +21,7 @@
 <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 <script src="<?php echo URLROOT; ?>/js/modal.js"></script>
 <script src="<?php echo URLROOT; ?>/js/jsonHandler.js"></script>
+<script src="<?php echo URLROOT; ?>/js/scrolling-nav.js"></script>
 
 
 </body>

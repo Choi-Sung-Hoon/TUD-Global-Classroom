@@ -9,7 +9,7 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     // URL Root
-    define('URLROOT', 'http://localhost/adventure');
+    define('URLROOT', 'http://192.168.0.186/');
 
     //Site Name
     define('SITENAME', 'Adventure');
