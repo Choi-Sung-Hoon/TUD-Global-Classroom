@@ -13,7 +13,6 @@
       </p>
     </div>
   </header>
-
   <section id="about">
     <div class="container">
       <div class="row">
