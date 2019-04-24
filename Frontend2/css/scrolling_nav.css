@@ -25,12 +25,30 @@ section
 }
 
 /* disable dragging */
-#main_container > .container
+#main_container > #greetingBox
 {
+   margin-bottom: 300px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#event_container
+{
+  background-image: url(../image/main2.jpg);
+}
+
+#event_container > .container
+{
+  height: 700px;
+}
+
+#board_container
+{
+  padding: 56px;
+  background-image: url(../image/main2.jpg);
+  background-repeat: no-repeat;
 }
