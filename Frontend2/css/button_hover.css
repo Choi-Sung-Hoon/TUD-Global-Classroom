@@ -1,0 +1,45 @@
+#startButton
+{
+  background: #48C9B0;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 100px;
+  font-size: 2em;
+  padding: 0 5em;
+  cursor: pointer;
+  transition: 1000ms ease all;
+  outline: none;
+}
+
+#startButton:hover
+{
+  background:#fff;
+  color:#48C9B0;
+}
+
+#startButton:before,#startButton:after
+{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:5px;
+  width:0;
+  background: #48C9B0;
+  transition:1000ms ease all;
+}
+
+#startButton:after
+{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+#startButton:hover:before,#startButton:hover:after
+{
+  width:100%;
+  transition:500ms ease all;
+}
