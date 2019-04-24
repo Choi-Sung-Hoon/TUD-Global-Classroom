@@ -1,4 +1,4 @@
-#startButton
+#hoverButton
 {
   background: #48C9B0;
   color: #fff;
@@ -12,13 +12,13 @@
   outline: none;
 }
 
-#startButton:hover
+#hoverButton:hover
 {
   background:#fff;
   color:#48C9B0;
 }
 
-#startButton:before,#startButton:after
+#hoverButton:before,#hoverButton:after
 {
   content:'';
   position:absolute;
@@ -30,7 +30,7 @@
   transition:1000ms ease all;
 }
 
-#startButton:after
+#hoverButton:after
 {
   right:inherit;
   top:inherit;
@@ -38,7 +38,7 @@
   bottom:0;
 }
 
-#startButton:hover:before,#startButton:hover:after
+#hoverButton:hover:before,#hoverButton:hover:after
 {
   width:100%;
   transition:500ms ease all;
