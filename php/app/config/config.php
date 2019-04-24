@@ -1,15 +1,15 @@
 <?php 
     //Database Parameters
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'PLACEHOLDER');
-    define('DB_PASS', 'PLACEHOLDER');
-    define('DB_NAME', 'PLACEHOLDER');
+    define('DB_USER', 'adventurer');
+    define('DB_PASS', 'Summer is here');
+    define('DB_NAME', 'adventure');
 
     // App Root
     define('APPROOT', dirname(dirname(__FILE__)));
 
     // URL Root
-    define('URLROOT', 'http://192.168.0.186/');
+    define('URLROOT', 'http://localhost/');
 
     //Site Name
     define('SITENAME', 'Adventure');

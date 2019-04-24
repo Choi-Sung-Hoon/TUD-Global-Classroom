@@ -22,6 +22,9 @@
           <li>
             <a class="nav-link" href="#login_modal" data-toggle="modal" data-target="#login_modal">Login</a>
           </li>
+          <li>
+            <a href="#registration_modal" data-toggle="modal" data-target="#registration_modal" class="nav-link">Register</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -36,7 +39,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
-          <form action="/examples/actions/confirmation.php" method="post">
+          <form action="<?php echo URLROOT;?>user/confirmLogin.php" method="post">
             <div class="form-group">
               <i class="fa fa-envelope"></i>
               <input type="email" class="form-control" placeholder="Email address" required="required">
@@ -66,25 +69,29 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         </div>
         <div class="modal-body">
-          <form action="/examples/actions/confirmation.php" method="post">
+          <form action="<?php echo URLROOT; ?>users/register" method="post">
             <div class="form-group">
               <i class="fa fa-user"></i>
-              <input type="text" class="form-control" placeholder="User name" required="required">
+              <input type="text" class="form-control <?php echo (!empty($data['name_error'])) ? 'is_invalid' : '' ?>" name="name" placeholder="User name" required="required" value="">
+              <span class="invalid-feedback"><?php echo $data['name_error']; ?></span>
             </div>
             <div class="form-group">
               <i class="fa fa-envelope"></i>
-              <input type="email" class="form-control" placeholder="Email address" required="required">
+              <input type="email" class="form-control <?php echo (!empty($data['email_error'])) ? 'is_invalid' : '' ?>" name="email" placeholder="Email address" required="required">
+              <span class="invalid-feedback"><?php echo $data['email_error']; ?></span>
             </div>
             <div class="form-group">
               <i class="fa fa-lock"></i>
-              <input type="password" class="form-control" placeholder="Password" required="required">
+              <input type="password" class="form-control <?php echo (!empty($data['password_error'])) ? 'is_invalid' : '' ?>" name="password" placeholder="Password" required="required">
+              <span class="invalid-feedback"><?php echo $data['password_error']; ?></span>
             </div>
             <div class="form-group">
               <i class="fa fa-lock"></i>
-              <input type="password" class="form-control" placeholder="Repeat password" required="required">
+              <input type="password" class="form-control <?php echo (!empty($data['confirm_password_error'])) ? 'is_invalid' : '' ?>" name="confirm_password" placeholder="Repeat password" required="required">
+              <span class="invalid-feedback"><?php echo $data['confirm_password_error']; ?></span>
             </div>
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">
             </div>
           </form>
         </div>
