@@ -14,16 +14,16 @@
                 <ul>
                     <li><h3>Organizer: <?php echo $data['organizer'] ?></h3></li>
 
-                    <li><h3>location: <?php echo $data['location'] ?></h3></li>
+                    <li><h3>Location: <?php echo $data['location'] ?></h3></li>
 
                     <?php if($data['date'] != 0000-00-00) : ?>
                         <li><h3>Date: <?php echo $data['date']; ?></h3></li>
                     <?php else : ?>
                         <li><h3>Date: Not specified</h3></li>
                     <?php endif; ?>
-                    <li><h3>contact: <a href="http://<?php echo $data['contact'] ?>"> <?php echo $data['contact'] ?></a> </h3></li>
+                    <li><h3>Contact: <a href="http://<?php echo $data['contact'] ?>"> <?php echo $data['contact'] ?></a> </h3></li>
 
-                    <li><h3>price: <?php echo $data['price'] ?> €</h3></li>
+                    <li><h3>Price: <?php echo $data['price'] ?> €</h3></li>
                 </ul>
                 <br>
                 <button class="btn btn-primary btn-lg btn-block">Add to your adventures</button>
