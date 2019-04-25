@@ -10,6 +10,11 @@ $(document).ready(function () {
         $('.adventure-modal').css('display', 'none');
     });
 
+    // $('.comment-button').on('click', function () {
+    //     $('.comment-modal').css('display', 'none');
+    // });
+
+
     // //Click handlers for modal buttons.
     // $('.outdoor').click(function (e) {
     //     console.log("Outdoor");
