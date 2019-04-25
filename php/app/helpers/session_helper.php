@@ -9,3 +9,7 @@
             return false;
         }
     }
+
+    function redirect($location) {
+        header('location: ' . URLROOT . '/'.$location);
+    }

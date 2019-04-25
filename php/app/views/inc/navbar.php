@@ -8,16 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#main_container">Main</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo URLROOT;?>pages/index">Main</a>
           </li>
           <?php if(!isset($_SESSION['user_name'])) : ?>
           <li>
@@ -35,7 +26,7 @@
       </div>
     </div>
   </nav>
-
+<?php if(!isLoggedIn()) : ?>
   <!-- Login modal -->
   <div id="login_modal" class="modal fade">
     <div class="modal-dialog modal-login">
@@ -106,3 +97,4 @@
       </div>
     </div>
   </div>
+<?php endif ?>
