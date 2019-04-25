@@ -35,7 +35,6 @@ class User {
         } else {
             return false;
         }
-
     }
 
     public function findUserByName($name) {
