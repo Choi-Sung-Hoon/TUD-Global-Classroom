@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -15,8 +14,13 @@
 
   <!-- Custom styles for this template -->
   <link href="<?php echo URLROOT; ?>css/scrolling_nav.css" rel="stylesheet">
+  <link href="<?php echo URLROOT; ?>css/navbar.css" rel="stylesheet" >
+  
   <!-- Login modal stylesheet-->
+  <link href="<?php echo URLROOT; ?>css/main.css" rel="stylesheet" >
   <link href="<?php echo URLROOT; ?>css/login_modal.css" rel="stylesheet">
+  <link href="<?php echo URLROOT; ?>css/button_hover.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 

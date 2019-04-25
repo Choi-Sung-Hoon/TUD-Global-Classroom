@@ -119,16 +119,6 @@ footer {
     top: -30%;
 }
 
-.modalbox {
-    user-select: none;
-    font-weight: bold;
-    color: black;
-}
-.modalbox:hover {
-    color: black;
-    text-decoration: none;    
-}
-
 .adventure-modal {
     display: none;
     position: fixed;
@@ -149,9 +139,8 @@ footer {
 }
 
 .modal-content {
-    width: 50%;
+    width: 100%;
     top: 30%;
-    left: 25%;
     border-width: 0px;
 }
 
@@ -196,7 +185,6 @@ footer {
 }
 
 h3 {
-    font-size: 300%;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -209,7 +197,6 @@ h3 {
     left: 33%;
     font-size: 150%;
     font-weight: bold;
-    width: 50%;
     
 }
 #search-bar {
@@ -252,13 +239,12 @@ h3 {
     transition-duration: 0.2s;
     transform: scale(1.1);
 }
+.modalbox {
+    color: black;
+}
+.modalbox:hover {
+    text-decoration: none;
+    color: black;
 
-.button-row {
-    align-content: center;
-    display: flex;
-    position: relative;
-    left: 40%;
-    top: -10px;
-    display: inline-block;
-    margin: 0 auto;
+
 }

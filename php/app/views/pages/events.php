@@ -14,20 +14,18 @@
       <input id="search-bar" type="text" placeholder="Search.." name="search">
   </div>
 
-  
-
-  <div class="button-row">
-            <button class="btn btn-success category-button">Family</button>
-        <button class="btn btn-success category-button">Seasonal</button>
-        <button class="btn btn-success category-button">Theatre</button>
-        <button class="btn btn-success category-button">Educational</button>
-
-
-  </div>
   <!-- Containers -->
   <div class="event-container">
+    <div class="row event-box">
+    <?php foreach($data['events'] as $event) : ?>
     
-    <!-- To be populated dynamically -->
+    <a href="<?php echo URLROOT . 'pages/eventDetails?event_id='.$event->id ?>" id="<?php echo $event->id; ?>" class='event-item col-md-3'> 
+      <img class='category-image' src='<?php echo URLROOT . 'img/'.$event->image;?>'>
+      <h4><?php echo $event->name ?></h4>
+      <p><?php echo $event->location; ?></p>
+    </a>
+    <?php endforeach ?>
+    </div>
   </div>
 
 <!-- Footer -->

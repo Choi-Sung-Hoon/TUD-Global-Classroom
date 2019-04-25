@@ -2,6 +2,7 @@
 .navbar-new {
     background-color: #33CC66;
     overflow: hidden;
+    position: fixed;
   }
   
   /* Style the links inside the navigation bar */
