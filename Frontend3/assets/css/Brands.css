@@ -1,0 +1,45 @@
+.brands {
+  color:#313437;
+  background-color:#fff;
+}
+
+.brands a {
+  display:block;
+  text-align:center;
+  padding:40px 0;
+}
+
+@media (max-width:767px) {
+  .brands a {
+    padding:30px 0;
+  }
+}
+
+.brands a img {
+  display:inline-block;
+  margin:10px 20px;
+  vertical-align:middle;
+}
+
+#main-section-text2 {
+  color:rgb(245,245,245);
+  font-size:54px;
+  margin-right:100px;
+}
+
+#main-section-text {
+  color:rgb(241,241,241);
+  font-size:54px;
+  margin-right:400px;
+}
+
+#New-Adventure-btn {
+  background-color:rgb(38,138,189);
+  font-size:60px;
+  border-radius:20px;
+}
+
+#btn-contain {
+  margin-top:330px;
+}
+
