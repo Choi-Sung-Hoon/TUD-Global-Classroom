@@ -5,6 +5,12 @@
     define('DB_PASS', 'Summer is here');
     define('DB_NAME', 'adventure');
 
+    // File sizes
+    define('KB', 1024);
+    define('MB', 1048576);
+    define('GB', 1073741824);
+    define('TB', 1099511627776);
+
     // App Root
     define('APPROOT', dirname(dirname(__FILE__)));
 
@@ -13,3 +19,4 @@
 
     //Site Name
     define('SITENAME', 'Adventure');
+    

@@ -1,8 +1,7 @@
 <?php
 /* 
  * App Core Class
- * Creates URL $ loads core controller
- * URL FORMAT - /controller/method/params
+ * Takes parameters from URL and loads controllers accordingly
  */
     class Core {
         protected $currentController = 'Pages';
@@ -44,7 +43,7 @@
              $this->currentMethod], $this->params);
 
         }
-        
+        // Get URL to define controller methods
         public function getUrl() {
             if(isset($_GET['url'])){
                 $url = rtrim($_GET['url'], '/');

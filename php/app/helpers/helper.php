@@ -11,5 +11,5 @@
     }
 
     function redirect($location) {
-        header('location: ' . URLROOT . '/'.$location);
+        header('location: ' . URLROOT . $location);
     }
