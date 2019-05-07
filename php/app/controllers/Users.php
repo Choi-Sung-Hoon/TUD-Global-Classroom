@@ -302,7 +302,7 @@
                     if($user) {
 						$username = $data['username'];
 						$valid = true;
-						echo'<input type="hidden" name="varname" value='.$data['username'].'>';
+					
 						
 								}
 						
@@ -318,7 +318,6 @@
 													<form  method="post">
 													<input type="password" name="password" placeholder ="Enter new password" required="required">
 													<input type="password" name="passwordconf" placeholder ="Confirm new password" required="required">
-													<input type="hidden" name="varname" value='.$username.'>
 													<button type="submit" name="resetPW">Reset Password </button>
 											
 										 
@@ -338,8 +337,7 @@
 										$username = $_SESSION["a"] ;
 										$CheckDaTing = $this->userModel->changepw($data2['password'], $data2['passwordconf'], $username );
 										if($CheckDaTing){
-											echo 'Password Changed Successfully\r\n';
-											echo $username;
+											echo 'Password Changed Successfully';
 		
 										}
 									

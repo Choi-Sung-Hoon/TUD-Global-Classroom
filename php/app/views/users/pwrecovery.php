@@ -3,7 +3,7 @@
         <div class="container card">
 			  <div class="form-group">
 			
-			<form method="post"  action="<?php echo URLROOT; ?>users/createpw" >
+			<form method="post" >
 						<p>Please confirm your email address and username </p>
 						<p>Email:</p>
 							<input type="email" class="form-control <?php echo (!empty($data['email_error'])) ? 'is-invalid' : '' ?>" name="email" placeholder="Email address" required="required">
