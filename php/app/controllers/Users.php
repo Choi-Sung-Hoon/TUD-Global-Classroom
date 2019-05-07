@@ -104,7 +104,7 @@
                     $data['password_error'] = 'Invalid email or password';
                     $this->view('users/login', $data);
                 }
-                
+                $this->view('/users/login', $data);
             }
             
 

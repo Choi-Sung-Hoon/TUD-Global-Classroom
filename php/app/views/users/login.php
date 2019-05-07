@@ -1,6 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
 
-
 <div class="container">
         <div class="container card">
           <form action="<?php echo URLROOT; ?>users/login" method="post">
@@ -17,11 +16,10 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
             </div>
           </form>
         </div>
-        </div>
-
+      </div>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>

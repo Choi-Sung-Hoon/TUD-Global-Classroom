@@ -4,6 +4,7 @@
             $this->db = new Database;
         }
 
+        // Get events by orientation (Indoor or Outdoor)
         public function getEventsByOrientation($orientation) {
             $this->db->query('SELECT * FROM event WHERE orientation = :orientation');
             $this->db->bind(':orientation', $orientation);
