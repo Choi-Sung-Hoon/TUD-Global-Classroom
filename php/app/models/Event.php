@@ -52,4 +52,24 @@ class Event
             return false;
         }
     }
+
+    public function createEvent($data) {
+        $this->db->query('INSERT INTO event(name, organizer, location, contact, orientation, price, category, image, date)
+                          VALUES(:name, :organizer, :location, :contact, :orientation, :price, :category, :image, :date)');
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':organizer', $data['organizer']);
+        $this->db->bind(':location', $data['location']);
+        $this->db->bind('contact', $data['contact']);
+        $this->db->bind(':orientation', $data['orientation']);
+        $this->db->bind(':price', $data['price']);
+        $this->db->bind('category', $data['category']);
+        $this->db->bind(':image', $data['image']);
+        $this->db->bind(':date', $data['date']);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

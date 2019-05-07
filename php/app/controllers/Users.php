@@ -3,6 +3,7 @@
         
         public function __construct() {
             $this->userModel = $this->model('User');
+            $this->eventModel = $this->model('Event');
         }
 
         public function register() {
@@ -56,7 +57,7 @@
 
                     // register user
                     if($this->userModel->register($data)) {
-                        header('Location: '. URLROOT . 'pages/index.php');       
+                        redirect('pages/index.php');       
                     }
                     
                 } else {
@@ -70,7 +71,7 @@
 
         public function login() {
             if(isset($_SESSION['user_name'])) {
-                header('Location: ' . URLROOT . '/index');
+                redirect('/index');
             }
             if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -115,7 +116,7 @@
             $_SESSION['user_name'] = $user->username;
             $_SESSION['user_id'] = $user->id;
 
-            header('Location: ' . URLROOT . 'index');
+            redirect('index');
 
         }
 
@@ -124,7 +125,132 @@
             unset($_SESSION['user_email']);
             unset($_SESSION['user_name']);
             session_destroy();
-            header('Location: ' . URLROOT . 'index');
+            redirect('index');
+        }
+
+        public function createEvent() {
+            $data = [];
+            if(!isLoggedIn()) {
+                redirect('index');
+            }
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+                // Set file variables
+                $imageDirectory = $_SERVER['DOCUMENT_ROOT'] . '/public/img/';
+                $file = $imageDirectory .basename($_FILES['fileToUpload']['name']);
+                $imageType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                $checkImage = getimagesize($_FILES['fileToUpload']['tmp_name']);
+
+
+                $data = [
+                    'name' => $_POST['name'],
+                    'organizer' => $_POST['organizer'],
+                    'location' => $_POST['location'],
+                    'contact' => $_POST['website'],
+                    'orientation' => $_POST['orientation'],
+                    'price' => 'from ' . $_POST['price'],
+                    'category' => $_POST['category'],
+                    'date' => $_POST['date'],
+                    'image' => '',
+                    'name_error' => '',
+                    'organizer_error' => '',
+                    'location_error' => '',
+                    'contact_error' => '',
+                    'orientation_error' => '',
+                    'price_error' => '',
+                    'category_error' => '',
+                    'date_error' => '',
+                    'image_error' => '',
+                    'general_error' => ''
+
+                ];
+
+                // Check that required fields aren't empty
+                if(empty($data['name'])) {
+                    $data['name_error'] = 'Field cannot be empty';
+                }
+                if(empty($data['organizer'])) {
+                    $data['organizer_error'] = 'Field cannot be empty';
+                }
+                if(empty($data['location'])) {
+                    $data['location_error'] = 'Field cannot be empty';
+                }
+                if(empty($data['contact'])) {
+                    $data['contact_error'] = 'Field cannot be empty';
+                }
+                if(empty($data['orientation'])) {
+                    $data['orientation_error'] = 'Field cannot be empty';
+                }
+
+                // Set price to 0 if field is empty
+                if(empty($_POST['price'])) {
+                    $data['price'] = 0;
+                }
+                if(empty($data['category'])) {
+                    $data['category_error'] = 'Please specify category';
+                }
+
+                // Check if file is an image
+                if($checkImage == false) {
+                    $data['image_error'] = 'File is not an image';
+                }
+                // Check file size ()
+                if($_FILES['fileToUpload']['size'] > (MB * 2)) {
+                    $data['image_error']  = 'Image is too large';
+                }
+                // Check image type
+                if($imageType != 'jpg' && $imageType != 'png' && $imageType != 'jpeg') {
+                    $data['image_error'] = 'Only jpg, jpeg and png images are allowed.';
+                }
+                if(empty($data['image_error'])) {
+                    if(!empty($file)) {
+                        $data['image'] = $_FILES['fileToUpload']['name'];
+                    }
+                    
+                }
+
+                if(empty($data['image'])) {
+                    $data['image'] == $_POST['category'] . '.jpg';
+                }
+    
+                if(empty($data['name_error']) && empty($data['organizer_error']) && empty($data['location_error'])
+                    && empty($data['contact_error']) && empty($data['orientation_error'])
+                    && empty($data['price_error']) && empty($data['category_error']) && empty($data['image_error'])) {
+                        if($this->eventModel->createEvent($data)) {
+                            if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $file)) {
+                                redirect('pages/events?orientation='.$data['orientation']);
+                            } else {
+                                $data['image_error'] = 'Failed to upload image';
+                                $this->view('users/createEvent', $data);
+                            }
+                                             
+                        } else {
+                            
+                            $this->view('users/createEvent', $data);
+                        }
+                    } else {
+                        
+                        echo $data['image_error'];
+                        echo $data['name_error'];
+                        echo $data['organizer_error'];
+                        echo $data['location_error'];   
+                        echo $data['date_error'];
+                        echo $data['orientation_error'];
+                        echo $data['price_error'];
+                        echo $data['category_error'];
+                        echo $data['contact_error'];
+                        echo $file;
+
+                        $data['general_error'] = 'Failed to create event';
+                        $this->view('users/createEvent', $data);
+                    }
+                    
+            } else {
+                $this->view('users/createEvent', $data);
+            }
+
+            
         }
 
     }

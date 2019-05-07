@@ -9,6 +9,7 @@
         <div class="row">
             <div class="col-md-6">
                 <img class="img-fluid" src="<?php echo URLROOT . 'img/' . $data['image_source'] ?>" alt="">
+                
             </div>
             <div class="col-md-6">
                 <ul>
@@ -80,11 +81,7 @@
                     </div>
                 </div>
 
-
-
-
             <?php endif ?>
-
-
+            <script src="<?php echo URLROOT; ?>/js/jsonHandler.js"></script>
             <!-- Footer -->
             <?php require APPROOT . '/views/inc/footer.php'; ?>

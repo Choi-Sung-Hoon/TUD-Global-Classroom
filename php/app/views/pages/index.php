@@ -1,6 +1,5 @@
 <!-- Header -->
 <?php require APPROOT . '/views/inc/header.php'; ?>
-
 <!-- Body -->
 <!-- Image container -->
 <header id="main_container" class="bg-primary text-white">

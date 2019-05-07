@@ -15,7 +15,6 @@
 <!-- Custom scripts -->
 <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 <script src="<?php echo URLROOT; ?>/js/modal.js"></script>
-<script src="<?php echo URLROOT; ?>/js/jsonHandler.js"></script>
 <script src="<?php echo URLROOT; ?>/js/scrolling-nav.js"></script>
 
 

@@ -1,12 +1,9 @@
 <?php
-/*
- * PDO Database Class
- * Connect to database
- * Create prepared statements
- * Bind values
- * Return rows and results
- */
+// PDO Database Class
+
 class Database {
+
+    // Define Database connection variables
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
@@ -17,14 +14,14 @@ class Database {
     private $error;
 
     public function __construct() {
-        //Set DSN
+        //Set Data Source Name.
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $options = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
 
-        // Create PDO instance
+        // Create PHP Data Object instance
         try{
             $this->dbHandler = new PDO($dsn, $this->user, $this->pass, $options);
         } catch(PDOException $e) {  
@@ -39,7 +36,7 @@ class Database {
         $this->stmt = $this->dbHandler->prepare($sql);
     }
 
-    // Bind values
+    // Define parameter types and bind values.
     public function bind($param, $value, $type = null) {
         if(is_null($type)) {
             switch(true) {
@@ -73,7 +70,7 @@ class Database {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
-    // Get single record as object
+    // Get single result as object
     public function singleResult() {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);

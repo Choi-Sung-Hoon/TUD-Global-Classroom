@@ -2,6 +2,7 @@
     class Pages extends Controller {
         public function __construct() {
             $this->eventModel = $this->model('Event');
+            $this->userModel = $this->model('User');
         }
 
         // index Controller
@@ -16,6 +17,8 @@
         
         // events Controller
         public function events() {
+            if($_SERVER['REQUEST_METHOD'] == 'GET') {
+
             $orientation = $_GET['orientation'];
             $events = $this->eventModel->getEventsByOrientation($orientation);
 
@@ -24,6 +27,8 @@
               ];
         
               $this->view('pages/events', $data);
+            }
+            
         }
 
         // event details controller
@@ -55,7 +60,7 @@
             // Check if event is set by get method
             if(isset($_GET['event_id'])) {
                 if(!$_GET['event_id'] > 0) {
-                    header('Location: ' . URLROOT . 'pages/events');
+                    redirect('pages/events');
                 }
 
                 // Get data from db
@@ -63,7 +68,7 @@
                 $comments = $this->eventModel->getCommentsByEvent($_GET['event_id']);   // Result set
 
                 if(empty($eventDetails)) {
-                    header('Location: ' . URLROOT . 'pages/events');
+                    redirect('pages/events');
                 }
 
                 $data = [
