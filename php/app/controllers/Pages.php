@@ -15,7 +15,6 @@
             $this->view('pages/index', $data);
         }
         
-        // events Controller
         public function events() {
             if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
