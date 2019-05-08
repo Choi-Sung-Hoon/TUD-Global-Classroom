@@ -245,6 +245,11 @@ h3 {
 .modalbox:hover {
     text-decoration: none;
     color: black;
+}
 
-
+#event_container
+{
+  padding: 56px;
+  background-image: url(../img/main2.jpg);
+  background-repeat: no-repeat;
 }

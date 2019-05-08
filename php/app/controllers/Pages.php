@@ -23,12 +23,12 @@
             $events = $this->eventModel->getEventsByOrientation($orientation);
 
             $data = [
+                'orientation' => $orientation,
                 'events' => $events
               ];
         
               $this->view('pages/events', $data);
             }
-            
         }
 
         // event details controller

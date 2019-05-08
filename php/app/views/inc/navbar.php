@@ -1,7 +1,11 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="#page-top">Adventure in Ireland</a>
+		<a class="navbar-brand js-scroll-trigger" href="<?php echo URLROOT; ?>index.php">Adventure in Ireland</a>
+		<div class="searchbar">
+			<input class="search_input" type="text" name="" placeholder="Search...">
+				<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+		</div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -26,6 +30,7 @@
 		</div>
 	</div>
 </nav>
+
 <?php if (!isLoggedIn()) : ?>
 	<!-- Login modal -->
 	<div id="login_modal" class="modal fade">
