@@ -1,0 +1,2 @@
+# TUD-Global-Classroom
+The application we aim to develop is an interactive website to encourage people to make their own adventure and to keep track of their traces. The primary goal is to make simple, intuitive and interesting UI for the best customer engagement to our application. The secondary goal is to givethe various options such as accommodation, events and travelto the customers depends the type of the group.
