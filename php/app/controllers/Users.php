@@ -252,5 +252,98 @@
 
             
         }
+		
+		
+		public function pwrecovery() {
+           
+            $data = [
+                'title' => 'Welcome',
+            ];   
+
+            $this->view('pages/pwrecovery', $data);
+			$valid = false;
+			
+			
+			
+			
+			if (isset($_POST['username'])){
+				
+				$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                $data = [
+                    'email' => $_POST['email'],
+                    'username' => $_POST['username'],
+                    'email_error' => '',
+                    'username_error' => '',
+					
+                ];
+				
+				$_SESSION["a"] = $_POST['username'];
+				
+				if(empty($data['email'])) {
+                    $data['email_error'] = 'Please enter email';
+                }
+				if(empty($data['username'])) {
+                    $data['username_error'] = 'Please enter username';
+                }
+				// Checks to see if user inputed email exists
+				if($this->userModel->findUserByEmail($data['email'])) {
+                    $data['email_error'] = 'Invalid email';
+					echo 'Invalid email';
+                    }
+				// Checks to see if user inputed username exists
+				if($this->userModel->findUserByName($data['username'])) {
+				$data['username_error'] = 'Invalid username';
+				echo 'Invalid username';
+				}
+				//checks to see if no errors
+				if(empty($data['email_error']) && empty($data['username_error'])) {
+					//sends information to be checked, returns boolean
+                    $user = $this->userModel->pwrecovery($data['email'], $data['username']);
+                    if($user) {
+						$username = $data['username'];
+						$valid = true;
+					
+						
+								}
+						
+				}
+
+				
+			}
+			if($valid){
+						echo'	<div class="container">
+										<div class="container card">
+											<div class="form-group">
+											
+													<form  method="post">
+													<input type="password" name="password" placeholder ="Enter new password" required="required">
+													<input type="password" name="passwordconf" placeholder ="Confirm new password" required="required">
+													<button type="submit" name="resetPW">Reset Password </button>
+											
+										 
+											</div>
+										</div>
+									</div>
+								';
+                             } 
+							 
+				if (isset($_POST['passwordconf'])){
+									
+									 $data2 = [
+										'password' => $_POST['password'],
+										'passwordconf' => $_POST['passwordconf']
+										];
+										
+										$username = $_SESSION["a"] ;
+										$CheckDaTing = $this->userModel->changepw($data2['password'], $data2['passwordconf'], $username );
+										if($CheckDaTing){
+											echo 'Password Changed Successfully';
+		
+										}
+									
+								}
+						
+			
+		}
 
     }

@@ -19,6 +19,7 @@
 				<input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
 			</div>
 		</form>
+		 <p ><a class="loginhelp" href="<?php echo URLROOT;?>users/pwrecovery">Forgot Password?</a></p>
 	</div>
 </div>
 
