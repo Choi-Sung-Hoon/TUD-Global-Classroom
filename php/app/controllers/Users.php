@@ -230,18 +230,6 @@
                             $this->view('users/createEvent', $data);
                         }
                     } else {
-                        
-                        echo $data['image_error'];
-                        echo $data['name_error'];
-                        echo $data['organizer_error'];
-                        echo $data['location_error'];   
-                        echo $data['date_error'];
-                        echo $data['orientation_error'];
-                        echo $data['price_error'];
-                        echo $data['category_error'];
-                        echo $data['contact_error'];
-                        echo $file;
-
                         $data['general_error'] = 'Failed to create event';
                         $this->view('users/createEvent', $data);
                     }
