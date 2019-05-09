@@ -46,8 +46,7 @@
 							</p>
 							<div class="row">
 								<form action="" method="post">
-									<span name="removeEvent" value="<?php echo $d->saveid; ?>"></span>
-									<button type="submit" class="btn btn-block btn-primary btn-center" type="button" id="Event-edit-button">Remove This</button>
+									<button type="submit" name="removeEvent" value="<?php echo $d->saveid; ?>" class="btn btn-block btn-primary btn-center" type="button" id="Event-edit-button">Remove This</button>
 								</form>
 							</div>
 						</div>

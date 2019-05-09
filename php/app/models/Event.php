@@ -63,10 +63,11 @@ class Event
     }
 
     // Check is user has already liked
-    public function checkLikes($id)
+    public function checkLikes($data)
     {
-        $this->db->query('SELECT * FROM likes where userid = :userid');
-        $this->db->bind(':userid', $id);
+        $this->db->query('SELECT * FROM likes where userid = :userid AND eventid = :eventid');
+        $this->db->bind(':userid', $data['user_id']);
+        $this->db->bind(':eventid', $data['event_id']);
         $row = $this->db->singleResult();
 
         // Check if anything is returned
@@ -75,10 +76,11 @@ class Event
         }
     }
 
-    public function removeLike($id)
+    public function removeLike($data)
     {
-        $this->db->query('DELETE FROM likes WHERE userid = :userid');
-        $this->db->bind(':userid', $id);
+        $this->db->query('DELETE FROM likes WHERE userid = :userid AND eventid = :eventid');
+        $this->db->bind(':userid', $data['user_id']);
+        $this->db->bind(':eventid', $data['event_id']);
 
         if ($this->db->execute()) {
             return true;
@@ -87,7 +89,7 @@ class Event
 
     public function like($data)
     {
-        if ($this->checkLikes($data['user_id'])) {
+        if ($this->checkLikes($data)) {
             $this->db->query('INSERT INTO likes(eventid, userid) VALUES(:eventid, :userid)');
             $this->db->bind(':eventid', $data['event_id']);
             $this->db->bind(':userid', $data['user_id']);
@@ -98,7 +100,7 @@ class Event
                 return false;
             }
         } else {
-            $this->removeLike($data['user_id']);
+            $this->removeLike($data);
         }
     }
 
@@ -112,10 +114,11 @@ class Event
     }
 
     // Check if user has already flagged
-    public function checkFakes($id)
+    public function checkFakes($data)
     {
-        $this->db->query('SELECT * FROM fakes where userid = :userid');
-        $this->db->bind(':userid', $id);
+        $this->db->query('SELECT * FROM fakes where userid = :userid AND eventid = :eventid');
+        $this->db->bind(':userid', $data['user_id']);
+        $this->db->bind(':eventid', $data['event_id']);
         $row = $this->db->singleResult();
 
         // Check if anything is returned
@@ -126,7 +129,7 @@ class Event
 
     public function markFake($data)
     {
-        if ($this->checkFakes($data['user_id'])) {
+        if ($this->checkFakes($data)) {
             $this->db->query('INSERT INTO fakes(eventid, userid) VALUES(:eventid, :userid)');
             $this->db->bind(':eventid', $data['event_id']);
             $this->db->bind(':userid', $data['user_id']);
@@ -138,7 +141,7 @@ class Event
                 return false;
             }
         } else {
-            $this->removeFake($data['user_id']);
+            $this->removeFake($data);
         }
     }
 
@@ -151,10 +154,11 @@ class Event
         return $this->db->rowCount();
     }
 
-    public function removeFake($id)
+    public function removeFake($data)
     {
-        $this->db->query('DELETE FROM fakes WHERE userid = :userid');
-        $this->db->bind(':userid', $id);
+        $this->db->query('DELETE FROM fakes WHERE userid = :userid AND eventid = :eventid');
+        $this->db->bind(':userid', $data['user_id']);
+        $this->db->bind(':eventid', $data['event_id']);
 
         if ($this->db->execute()) {
             return true;

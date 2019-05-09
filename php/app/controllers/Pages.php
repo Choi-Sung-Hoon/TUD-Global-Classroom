@@ -38,7 +38,6 @@ class Pages extends Controller
                 }   
             }
         }
-
     }
     // events Controller
     public function events()
