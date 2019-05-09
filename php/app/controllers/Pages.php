@@ -42,6 +42,7 @@
                 $keyword = $_GET['keyword'];
                 $events = $this->eventModel->searchEvent($keyword);
                 $data = [
+                    'keyword' => $keyword,
                     'events' => $events
                   ];
             

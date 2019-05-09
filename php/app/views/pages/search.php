@@ -7,7 +7,7 @@
 	<div class="container content">
 		<!-- Page Heading -->
 		<h1 class="my-4 text-white">
-			Search Result
+			Search Result of "<?php echo $data['keyword']?>"
 		</h1>
 		<div class="row">
 			<?php foreach ($data['events'] as $event) : ?>
