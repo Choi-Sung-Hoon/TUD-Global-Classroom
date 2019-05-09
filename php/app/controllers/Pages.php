@@ -21,7 +21,7 @@
             $orientation = $_GET['orientation'];
             $page = $_GET['page'];
             $limit = $_GET['limit'];
-            // $events = $this->eventModel->getEventsByOrientation($orientation);            
+            // $events = $this->eventModel->getEventsByOrientation($orientation);
             $events = $this->eventModel->paginateEvent($orientation, $page, $limit);
 
             $data = [
@@ -32,6 +32,20 @@
               ];
         
               $this->view('pages/events', $data);
+            }
+        }
+
+        public function search()
+        {
+            if($_SERVER['REQUEST_METHOD'] == 'GET')
+            {
+                $keyword = $_GET['keyword'];
+                $events = $this->eventModel->searchEvent($keyword);
+                $data = [
+                    'events' => $events
+                  ];
+            
+                $this->view('pages/search', $data);
             }
         }
 

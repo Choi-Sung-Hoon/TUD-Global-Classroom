@@ -2,10 +2,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="<?php echo URLROOT; ?>index.php">Adventure in Ireland</a>
-		<div class="searchbar">
-			<input class="search_input" type="text" name="" placeholder="Search...">
-				<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-		</div>
+		<form action="<?php echo URLROOT ?>pages/search?page=1&limit=13" method="GET" class="searchbar">
+			<input class="search_input" type="text" name="keyword" placeholder="Search...">
+			<input type="submit" class="search_icon fas fas-search" value="">
+			<!-- <a href="<?php echo URLROOT ?>pages/search?page=1&limit=13" class="search_icon"><i class="fas fa-search"></i></a> -->
+		</form>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>

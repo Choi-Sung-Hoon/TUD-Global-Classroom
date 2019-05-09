@@ -45,6 +45,17 @@ class Event
         return $result;
     }
 
+    public function searchEvent($keyword)
+    {
+        $this->db->query("SELECT * FROM event WHERE name LIKE '%$keyword%' or
+                                                    organizer LIKE '%$keyword%' or
+                                                    location LIKE '%$keyword%'");
+        
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function getCommentsByEvent($eventId)
     {
         $this->db->query('SELECT * 
