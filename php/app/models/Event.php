@@ -17,6 +17,15 @@ class Event
         return $result;
     }
 
+    public function getEventsByCreatorId($id) {
+        $this->db->query('SELECT * FROM event WHERE creatorid = :creatorid');
+        $this->db->bind(':creatorid', $id);
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function getEventById($id)
     {
         $this->db->query('SELECT * FROM event WHERE id = :id');
@@ -180,6 +189,41 @@ class Event
         $this->db->bind(':creatorid', $data['creatorid']);
 
         if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function saveEvent($data) {
+        $this->db->query('INSERT INTO saved_event(event_id, user_id) VALUES(:event_id, :user_id)');
+        $this->db->bind(':event_id', $data['event_id']);
+        $this->db->bind(':user_id', $data['user_id']);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getSavedEventsById($id) {
+        $this->db->query('SELECT *, saved_event.id as saveid FROM event JOIN saved_event ON event.id = saved_event.event_id WHERE saved_event.user_id = :id');
+        $this->db->bind(':id', $id);
+        
+        $results = $this->db->resultSet();
+        if($this->db->execute()) {
+            return $results;
+        } else {
+            return false;
+        }
+    }
+
+    public function removeFromMyEvents($id) {
+        $this->db->query('DELETE from saved_event WHERE id = :id');
+        $this->db->bind(':id', $id);
+        
+        if($this->db->execute()) {
             return true;
         } else {
             return false;

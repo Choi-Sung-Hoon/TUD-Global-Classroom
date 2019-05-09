@@ -9,21 +9,21 @@
         <div class="row">
             <div class="col-md-6">
                 <img class="img-fluid" src="<?php echo URLROOT . 'img/' . $data['image_source'] ?>" alt="">
-                <?php if(isLoggedIn()) : ?>
-                <div class="row">
-                    <div class="col-md-4">
-                        <form action="" method="post">
-                            <button type="submit" name="like" value="like" class="btn btn-block btn-success"><i style="font-size:24px" class="mt-2 fa fa-thumbs-up"> <?php echo $data['likes'] ?></i></button>
-                        </form>                 
-                        <?php if($data['creatorid'] != 0) : ?>
-                        <form action="" method="post">
-                            <button type="submit" name="fake" value="fake" class="btn btn-block btn-danger">Mark as fake <?php echo $data['fakes'];?></button>
-                        </form>
-                        <?php endif ?>
+                <?php if (isLoggedIn()) : ?>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form action="" method="post">
+                                <button type="submit" name="like" value="like" class="btn btn-block btn-success"><i style="font-size:24px" class="mt-2 fa fa-thumbs-up"> <?php echo $data['likes'] ?></i></button>
+                            </form>
+                            <?php if ($data['creatorid'] != 0) : ?>
+                                <form action="" method="post">
+                                    <button type="submit" name="fake" value="fake" class="btn btn-block btn-danger">Mark as fake <?php echo $data['fakes']; ?></button>
+                                </form>
+                            <?php endif ?>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                    </div>
-                </div>
                 <?php endif; ?>
             </div>
             <div class="col-md-6">
@@ -55,8 +55,11 @@
                 </ul>
                 <br>
                 <button id="mapButton" class="btn btn-success btn-lg btn-block">Hide Map</button>
-                <button class="btn btn-primary btn-lg btn-block">Add to your adventures</button>
                 <?php if (isLoggedIn()) : ?>
+                    <form action="" method="post">
+                        <button type="submit" name="saveEvent" class="btn btn-primary btn-lg btn-block">Add to your adventures</button>
+                    </form>
+
                     <button data-toggle="modal" data-target="#commentModal" class="btn btn-success btn-lg btn-block">Add a comment</button>
                 <?php endif ?>
             </div>

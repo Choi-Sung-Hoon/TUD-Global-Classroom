@@ -1,12 +1,6 @@
 </div>
 </body>
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-	<div class="container">
-		<p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-	</div>
-</footer>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>

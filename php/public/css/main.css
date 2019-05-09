@@ -250,6 +250,9 @@ h3 {
 #event_container
 {
   padding: 56px;
+  height: 100%;
   background-image: url(../img/main2.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
