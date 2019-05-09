@@ -116,7 +116,8 @@ class Pages extends Controller
                 'date' => $eventDetails->date,
                 'comments' => $comments,
                 'likes' => $likes,
-                'fakes' => ' ('. $fakes . ')'
+                'fakes' => ' ('. $fakes . ')',
+                'creatorid' => $eventDetails->creatorid
             ];
 
             if($fakes == 0) {

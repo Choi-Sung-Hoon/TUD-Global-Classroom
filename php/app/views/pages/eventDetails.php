@@ -15,9 +15,11 @@
                         <form action="" method="post">
                             <button type="submit" name="like" value="like" class="btn btn-block btn-success"><i style="font-size:24px" class="mt-2 fa fa-thumbs-up"> <?php echo $data['likes'] ?></i></button>
                         </form>                 
+                        <?php if($data['creatorid'] != 0) : ?>
                         <form action="" method="post">
                             <button type="submit" name="fake" value="fake" class="btn btn-block btn-danger">Mark as fake <?php echo $data['fakes'];?></button>
                         </form>
+                        <?php endif ?>
                     </div>
                     <div class="col-md-4">
                     </div>
