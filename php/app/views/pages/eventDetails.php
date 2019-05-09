@@ -9,7 +9,20 @@
         <div class="row">
             <div class="col-md-6">
                 <img class="img-fluid" src="<?php echo URLROOT . 'img/' . $data['image_source'] ?>" alt="">
-                
+                <?php if(isLoggedIn()) : ?>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form action="" method="post">
+                            <button type="submit" name="like" value="like" class="btn btn-block btn-success"><i style="font-size:24px" class="mt-2 fa fa-thumbs-up"> <?php echo $data['likes'] ?></i></button>
+                        </form>                 
+                        <form action="" method="post">
+                            <button type="submit" name="fake" value="fake" class="btn btn-block btn-danger">Mark as fake <?php echo $data['fakes'];?></button>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <div class="col-md-6">
                 <ul>
@@ -52,7 +65,7 @@
         <br>
         <div class="row">
             <?php foreach ($data['comments'] as $comment) : ?>
-                <div class=" col-md-6 card">
+                <div class=" col-md-12 card">
                     <p><strong>Written by: <?php echo $comment->username; ?></strong></p>
                     <p><?php echo $comment->comment; ?></p>
                 </div>
