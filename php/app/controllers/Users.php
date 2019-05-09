@@ -246,7 +246,7 @@ class Users extends Controller
             'title' => 'Welcome',
         ];
 
-        $this->view('pages/pwrecovery', $data);
+        $this->view('users/pwrecovery', $data);
         $valid = false;
 
 
