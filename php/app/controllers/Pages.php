@@ -20,11 +20,16 @@
             if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             $orientation = $_GET['orientation'];
-            $events = $this->eventModel->getEventsByOrientation($orientation);
+            $page = $_GET['page'];
+            $limit = $_GET['limit'];
+            // $events = $this->eventModel->getEventsByOrientation($orientation);            
+            $events = $this->eventModel->paginateEvent($orientation, $page, $limit);
 
             $data = [
                 'orientation' => $orientation,
-                'events' => $events
+                'events' => $events,
+                'page' => $page,
+                'limit' => $limit
               ];
         
               $this->view('pages/events', $data);

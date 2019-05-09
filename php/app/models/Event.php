@@ -26,6 +26,25 @@ class Event
         return $row;
     }
 
+    public function paginateEvent($orientation, $page = 1, $limit = 13)
+    {
+        if($limit == 0)
+        {
+            $this->db->query('SELECT * FROM event WHERE orientation = :orientation');
+            $this->db->bind(':orientation', $orientation);
+        }
+        else
+        {
+            $this->db->query('SELECT * FROM event WHERE orientation = :orientation LIMIT :start, :limit');
+            $this->db->bind(':orientation', $orientation);
+            $this->db->bind(':start', ((intval($page) - 1) * intval($limit)));
+            $this->db->bind(':limit', intval($limit));
+        }
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function getCommentsByEvent($eventId)
     {
         $this->db->query('SELECT * 

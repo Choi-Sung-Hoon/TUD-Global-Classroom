@@ -2,8 +2,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <?php if (isset($_GET['event_id'])  && $_GET['event_id'] > 0) : ?>
-
-
     <div class="container">
         <h1><?php echo $data['eventName']; ?></h1>
         <div class="row">
@@ -52,7 +50,7 @@
         <br>
         <div class="row">
             <?php foreach ($data['comments'] as $comment) : ?>
-                <div class=" col-md-6 card">
+                <div class=" col-md-12 card">
                     <p><strong>Written by: <?php echo $comment->username; ?></strong></p>
                     <p><?php echo $comment->comment; ?></p>
                 </div>
@@ -66,22 +64,25 @@
         <div id="commentModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add a comment</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form class="md-form" action="<?php echo URLROOT . 'pages/eventDetails?event_id=' . $_GET['event_id']; ?>" method="POST">
-                            <textarea class="md-textarea form-control" name="newComment" id="form10" cols="20" rows="10"></textarea>
-                            <button class="btn btn-success btn-block">Submit</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add a comment</h4>
+            </div>
+            <div class="modal-body">
+                <form class="md-form" action="<?php echo URLROOT . 'pages/eventDetails?event_id=' . $_GET['event_id']; ?>" method="POST">
+                    <textarea class="md-textarea form-control" name="newComment" id="form10" cols="20" rows="10"></textarea>
+                    <button class="btn btn-success btn-block">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
 
-            <?php endif ?>
-            <script src="<?php echo URLROOT; ?>/js/jsonHandler.js"></script>
-            <!-- Footer -->
-            <?php require APPROOT . '/views/inc/footer.php'; ?>
+<?php endif ?>
+<script src="<?php echo URLROOT; ?>/js/jsonHandler.js"></script>
+
+<!-- Footer -->
+<?php require APPROOT . '/views/inc/footer.php'; ?>
