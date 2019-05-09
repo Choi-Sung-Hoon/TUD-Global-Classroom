@@ -24,13 +24,13 @@
     <div class="modal-content modal-dialog">
         <!-- Buttons for activities -->
         <div class="row modal-row">
-            <a href="<?php echo URLROOT ?>pages/events?orientation=indoor&page=1&limit=12" class="col-md-6 modalbox indoor">
+            <a href="<?php echo URLROOT ?>pages/events?orientation=indoor" class="col-md-6 modalbox indoor">
                 <h3>Indoor</h3>
                 <p>Wanna relax? Meet a few locals at a popular pub?</p>
                 <p>Or maybe try a local dance class?</p>
                 <p>If so, let's stay indoors!</p>
             </a>
-            <a href="<?php echo URLROOT ?>pages/events?orientation=outdoor&page=1&limit=12" class="col-md-6 modalbox outdoor">
+            <a href="<?php echo URLROOT ?>pages/events?orientation=outdoor" class="col-md-6 modalbox outdoor">
                 <h3>Outdoor</h3>
                 <p>Feeling spontaneous? Wanna get some fresh air?</p>
                 <p>Lets go to beach, climb a mountain,</p>

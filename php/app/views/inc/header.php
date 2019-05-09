@@ -20,6 +20,7 @@
 	<link href="<?php echo URLROOT; ?>css/main.css" rel="stylesheet">
 	<link href="<?php echo URLROOT; ?>css/login_modal.css" rel="stylesheet">
 	<link href="<?php echo URLROOT; ?>css/button_hover.css" rel="stylesheet">
+	<link href="<?php echo URLROOT; ?>css/styles.css" rel="stylesheet">
 	<!-- Searchbar stylesheet -->
 	<link href="<?php echo URLROOT; ?>css/search_bar.css" rel="stylesheet">
 

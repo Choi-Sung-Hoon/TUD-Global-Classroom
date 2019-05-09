@@ -1,5 +1,8 @@
 body {
     font-family: 'Dosis', sans-serif;
+    background-color: #263238;
+    color: rgb(240,240,240);
+
 }
 
 footer {
@@ -47,6 +50,7 @@ footer {
     height: 90px;
     font-weight: bold;
 }
+
 .adventure-button:hover {
     transform: scale(1.1);
     animation-duration: 0.2s;
@@ -197,12 +201,13 @@ h3 {
     left: 33%;
     font-size: 150%;
     font-weight: bold;
-    
+
 }
+
 #search-bar {
     width: 600px;
     position: relative;
-    left:-5px;
+    left: -5px;
     border-width: 0px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -219,8 +224,8 @@ h3 {
 }
 
 .category-image {
-    width:160px;
-    height:160px;
+    width: 160px;
+    height: 160px;
 }
 
 .event-box {
@@ -239,17 +244,104 @@ h3 {
     transition-duration: 0.2s;
     transform: scale(1.1);
 }
+
 .modalbox {
     color: black;
 }
+
 .modalbox:hover {
     text-decoration: none;
     color: black;
 }
 
-#event_container
-{
-  padding: 56px;
-  background-image: url(../img/main2.jpg);
-  background-repeat: no-repeat;
+#event_container {
+    padding: 56px;
+    height: 100%;
+    background-image: url(../img/main2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#like-btn {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+
+
+#comments {
+    background-color: rgba(0, 0, 0, 0.025);
+    margin-bottom: 20px;
+}
+
+#event-img {
+    margin-bottom: 20px;
+}
+
+#comment-btn {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+#add-btn {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+#fake-btn {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+#mapButton {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+#info-col {
+    margin-bottom: 20px;
+}
+
+#comment-btn-col {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+#Adventures-display-row {
+        background-color: rgba(0, 0, 0, 0.025);
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+.card {
+    background-color: rgba(39, 36, 36, 0.5);
+}
+
+
+
+#CommentModal {
+    background-color: #37474F;
+}
+
+.modal-title {
+    color: black;
+}
+
+#comment-btn-modal {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }

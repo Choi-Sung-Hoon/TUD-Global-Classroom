@@ -1,0 +1,259 @@
+#btn-contain {
+    margin-top: -50px;
+}
+
+#Section-main {
+    background-image: url("../../assets/img/Untitled.png");
+    width: 100%;
+    height: 500px;
+}
+
+
+
+#Home-heading {
+    padding-top: 40px;
+    padding-right: 50px;
+}
+
+@media (min-width:768px) {
+    .navigation-clean-button {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.navigation-clean-button {
+    background: #fff;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #333;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0;
+}
+
+#Main-section-bottom {
+    margin-top: 40px;
+}
+
+#Apply-burron {
+    font-size: 22px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+#Apply-button {
+    font-size: 22px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+
+
+#events-display-col {
+    padding-top: 30px;
+}
+
+#Event-listing {
+    margin-bottom: 20px;
+}
+
+#Event-description {
+    font-size: 16px;
+}
+
+#Details-button {
+    font-size: 28px;
+}
+
+#top-events-main-section {
+    background-image: url("../../assets/img/Untitled-1.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+}
+
+#search-row {
+    height: 400px;
+}
+
+#search-button {
+    font-family: Dosis, sans-serif;
+    font-size: 30px;
+}
+
+#top-events-cont {
+    margin-top: 20px;
+}
+
+
+
+.h1,
+h1 {}
+
+#profile-heading {
+    background-color: #4B515D;S
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#user-img-row {
+    margin-top: 10px;
+}
+
+#profile-change-btn {
+    font-size: 34px;
+}
+
+#Notifications-row {
+    margin-top: 10px;
+}
+
+#Notification-text {
+    font-size: 24px;
+}
+
+#Adventures-heading {
+    background-color: #4B515D;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#Event-info-box {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#Event-edit-button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#Event-invite-button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#Past-adventures-heading {
+    background-color: #4B515D;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#Like-button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#Comment-button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.filter select {
+  width:170px;
+  padding:5px;
+  border-radius:5px;
+  border:none;
+  box-shadow:0 0 2px #aaa;
+  margin:10px;
+  background:#eee;
+}
+
+.filter {
+  text-align:center;
+}
+
+.filter input {
+  margin:30px;
+  width:60%;
+  padding:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  border:none;
+  border-radius:5px;
+  background:#eee;
+}
+
+.filter {
+}
+
+#Event-Page-button {
+  margin:10px;
+  font-size:24px;
+}
+
+.footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+#New-Adventure-btn {
+    background-color: rgb(38, 138, 189);
+    font-size: 60px;
+    border-radius: 20px;
+}
