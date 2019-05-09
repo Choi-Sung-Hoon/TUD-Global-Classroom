@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Adventure in Ireland</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling_nav.css" rel="stylesheet">
+  <!-- Login modal stylesheet -->
+  <link href="css/login_modal.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- Button hover stylesheet -->
+  <link href="css/button_hover.css" rel="stylesheet">
+  <!-- Searchbar stylesheet -->
+  <link href="css/search_bar.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">Adventure in Ireland</a>
+      <div class="searchbar">
+        <input class="search_input" type="text" name="" placeholder="Search...">
+        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#main_container">Main</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#login_modal" data-toggle="modal" data-target="#login_modal">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login modal -->
+  <div id="login_modal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <i class="fa fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Email address" required="required">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#registration_modal" data-toggle="modal" data-dismiss="modal">Do you want to register?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration modal -->
+  <div id="registration_modal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign up</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <i class="fa fa-user"></i>
+              <input type="text" class="form-control" placeholder="User name" required="required">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Email address" required="required">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-lock"></i>
+              <input type="password" class="form-control" placeholder="Repeat password" required="required">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="profile_container" class="text-white">
+    
+  </header>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Adventure in Ireland 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+</body>
+</html>
