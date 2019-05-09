@@ -1,5 +1,6 @@
 <!-- Header -->
 <?php require APPROOT . '/views/inc/header.php'; ?>
+
 <!-- Body -->
 <!-- Image container -->
 <header id="main_container" class="bg-primary text-white">
@@ -17,8 +18,8 @@
         <button data-toggle="modal" data-target="#adventure-modal" id="hoverButton">Start new adventure</button>
     </div>
 </header>
-<div id="adventure-modal" class="modal fade" role="dialog">
 
+<div id="adventure-modal" class="modal fade" role="dialog">
     <!-- Modal content -->
     <div class="modal-content modal-dialog">
         <!-- Buttons for activities -->
@@ -36,11 +37,8 @@
                 <p> or maybe watch the local Gaelic game?</p>
             </a>
         </div>
-
     </div>
 </div>
 
-</div>
-</div>
 <!-- Footer -->
 <?php require APPROOT . '/views/inc/footer.php'; ?>

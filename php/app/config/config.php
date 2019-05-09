@@ -1,8 +1,8 @@
 <?php 
     //Database Parameters
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'adventurer');
-    define('DB_PASS', 'Summer is here');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
     define('DB_NAME', 'adventure');
 
     // File sizes
@@ -19,4 +19,3 @@
 
     //Site Name
     define('SITENAME', 'Adventure');
-    

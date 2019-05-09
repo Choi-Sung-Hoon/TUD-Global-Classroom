@@ -11,9 +11,11 @@ class Pages extends Controller
     public function index()
     {
 
-        $data = [
-            'title' => 'Welcome',
-        ];
+            $this->view('pages/index', $data);
+        }
+        
+        public function events() {
+            if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         $this->view('pages/index', $data);
     }
@@ -27,10 +29,12 @@ class Pages extends Controller
             $events = $this->eventModel->getEventsByOrientation($orientation);
 
             $data = [
+                'orientation' => $orientation,
                 'events' => $events
-            ];
-
-            $this->view('pages/events', $data);
+              ];
+        
+              $this->view('pages/events', $data);
+            }
         }
     }
 
